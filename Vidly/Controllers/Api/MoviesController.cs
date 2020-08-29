@@ -18,14 +18,19 @@ namespace Vidly.Controllers.Api
         {
             _context = new ApplicationDbContext();
         }
-        public IHttpActionResult  GetCustomers()
+        public IHttpActionResult  GetCustomers(string query =null )
         {
-           var customerDto=_context.Movies
-                .Include(m=>m.Gener)
-                .ToList()
-                .Select(Mapper.Map<Movie, MovieDto>);//only reftance  need only deligate
+            var movieQuery = _context.Movies
+                 .Include(m => m.Gener)
+                 .Where(m=>m.NumberAvailable>0);
 
-            return Ok(customerDto);
+            if (!String.IsNullOrWhiteSpace(query))
+                movieQuery = movieQuery.Where(c => c.Name.Contains(query));
+
+            var movieDto = movieQuery
+                .ToList()
+                  .Select(Mapper.Map<Movie, MovieDto>);//only reftance  need only deligate
+            return Ok(movieDto);
         }
 
         [HttpGet]

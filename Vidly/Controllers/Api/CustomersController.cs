@@ -19,12 +19,18 @@ namespace Vidly.Controllers.Api
         {
             _context = new ApplicationDbContext();
         }
-        public IHttpActionResult GetCustomers()
+        public IHttpActionResult GetCustomers(string query=null)
         {
-           var customerDto= _context.Customers
-                .Include(c => c.MembershipType)
+
+            var customersQuery = _context.Customers
+                 .Include(c => c.MembershipType);
+
+            if (!String.IsNullOrWhiteSpace(query))
+                customersQuery = customersQuery.Where(c => c.Name.Contains(query));
+
+            var customerDto = customersQuery
                 .ToList()
-                .Select(Mapper.Map<Customer, CustomerDto>);//only reftance  need only deligate
+                  .Select(Mapper.Map<Customer, CustomerDto>);//only reftance  need only deligate
             return Ok(customerDto);
         }
 

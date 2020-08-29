@@ -22,5 +22,7 @@ namespace Vidly.Models
         [Required]
         public byte  GenerId { get; set; }
 
+        public byte  NumberAvailable { get; set; }
+
     }
 }
