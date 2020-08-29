@@ -19,5 +19,6 @@ namespace Vidly.Dtos
         public DateTime ReleaseDate { get; set; }
         [Required]
         public byte GenerId { get; set; }
+        public GenerDto Gener { get; set; }
     }
 }

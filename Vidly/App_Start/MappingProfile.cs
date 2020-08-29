@@ -16,6 +16,7 @@ namespace Vidly.App_Start
             Mapper.CreateMap<Customer, CustomerDto>();//source targate
             Mapper.CreateMap<Movie, MovieDto>();//uses reflection  //Convention based mapping tools
             Mapper.CreateMap<MembershipType, MembershipTypeDto>();
+            Mapper.CreateMap<Gener, GenerDto>();
 
             // Dto to Domain
             Mapper.CreateMap<CustomerDto, Customer>()

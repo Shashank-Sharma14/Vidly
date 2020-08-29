@@ -14,11 +14,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 <h2>Customers</h2>
-@if (!Model.Any())
-{
-    <p>We don't have any customers yet.</p> }
-else
-{
+
     <table id="customers" class="table table-bordered table-hover">
         <thead>
             <tr>
@@ -28,7 +24,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var customer in Model)
+           @* @foreach (var customer in Model)
             {
                 <tr>
                     <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id }, null)</td>
@@ -38,9 +34,9 @@ else
 
                     </td>
                 </tr>
-            }
+            }*@
         </tbody>
-    </table>}
+    </table>
 
 @section scripts
 {

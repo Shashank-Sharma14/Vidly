@@ -189,6 +189,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
+    <Compile Include="Dtos\GenerDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -210,6 +211,14 @@
     <Compile Include="Migrations\202007260957242_AddingDataToGener.Designer.cs">
       <DependentUpon>202007260957242_AddingDataToGener.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008220933482_SeedUsers.cs" />
+    <Compile Include="Migrations\202008220933482_SeedUsers.Designer.cs">
+      <DependentUpon>202008220933482_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008221051221_AddedDrivingLicenseToapplicationuser.cs" />
+    <Compile Include="Migrations\202008221051221_AddedDrivingLicenseToapplicationuser.Designer.cs">
+      <DependentUpon>202008221051221_AddedDrivingLicenseToapplicationuser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -219,6 +228,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
@@ -463,6 +473,7 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\New.cshtml" />
+    <Content Include="Views\Movies\Readonly.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -493,6 +504,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007260957242_AddingDataToGener.resx">
       <DependentUpon>202007260957242_AddingDataToGener.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008220933482_SeedUsers.resx">
+      <DependentUpon>202008220933482_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008221051221_AddedDrivingLicenseToapplicationuser.resx">
+      <DependentUpon>202008221051221_AddedDrivingLicenseToapplicationuser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

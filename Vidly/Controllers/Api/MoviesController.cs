@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Vidly.Dtos;
 using Vidly.Models;
-
+using System.Data.Entity;
 namespace Vidly.Controllers.Api
 {
     public class MoviesController : ApiController
@@ -18,9 +18,14 @@ namespace Vidly.Controllers.Api
         {
             _context = new ApplicationDbContext();
         }
-        public IEnumerable<MovieDto> GetCustomers()
+        public IHttpActionResult  GetCustomers()
         {
-            return _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>);//only reftance  need only deligate
+           var customerDto=_context.Movies
+                .Include(m=>m.Gener)
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>);//only reftance  need only deligate
+
+            return Ok(customerDto);
         }
 
         [HttpGet]
